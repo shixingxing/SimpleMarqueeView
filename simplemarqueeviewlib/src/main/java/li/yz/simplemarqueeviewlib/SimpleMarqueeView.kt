@@ -3,11 +3,16 @@ package li.yz.simplemarqueeviewlib
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.Paint
+import android.graphics.Rect
+import android.graphics.Shader
+import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.animation.LinearInterpolator
 import kotlin.math.abs
@@ -20,7 +25,11 @@ class SimpleMarqueeView : View {
         init(context, attrs, 0)
     }
 
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(
+        context,
+        attrs,
+        defStyleAttr
+    ) {
         init(context, attrs, defStyleAttr)
     }
 
@@ -41,7 +50,8 @@ class SimpleMarqueeView : View {
             4 -> typeFace = Typeface.defaultFromStyle(Typeface.BOLD_ITALIC)
         }
         val text = a.getString(R.styleable.SimpleMarqueeView_text) ?: ""
-        shadowWidth = a.getDimension(R.styleable.SimpleMarqueeView_shadow_width, dp2px(14f).toFloat())
+        shadowWidth =
+            a.getDimension(R.styleable.SimpleMarqueeView_shadow_width, dp2px(14f).toFloat())
         margin = a.getDimension(R.styleable.SimpleMarqueeView_margin_txt, dp2px(133f).toFloat())
         speed = a.getInt(R.styleable.SimpleMarqueeView_speed, 12).toLong()
         delay = a.getInt(R.styleable.SimpleMarqueeView_delay, 1500).toLong()
@@ -53,25 +63,34 @@ class SimpleMarqueeView : View {
     private var density: Float = 2f
     private var scaleDensity: Float = 2f
     private var gravity = 1
+
     //font size
     private var textSize = 33f
+
     //font color
     private var textColor = Color.parseColor("#000000")
+
     //style
     private var typeFace = Typeface.DEFAULT
 
     //文本
     private var mText = ""
+
     //compute text width if txtWidth>width  user marquee
     private var txtWidth = 0
+
     //shadow,if background is not color , that is not useful
     private var shadowWidth = 0f
+
     //the system marquee textview is 12L
     private var speed = 12L
+
     //animation delay
     private var delay = 1500L
+
     //between two texts margin
     private var margin = 0f
+
     //0 text 1 marquee
     private var showMode = 0
     private var anim: ValueAnimator? = null

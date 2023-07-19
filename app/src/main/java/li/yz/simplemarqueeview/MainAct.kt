@@ -1,12 +1,12 @@
 package li.yz.simplemarqueeview
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.text.Spannable
-import android.text.SpannableString
 import android.util.Log
 import android.view.View
-import kotlinx.android.synthetic.main.main_act.*
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import li.yz.simplemarqueeviewlib.SimpleMarqueeView
 
 /**
  * createed by liyuzheng on 2019/7/26 11:26
@@ -16,9 +16,18 @@ class MainAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_act)
 
+        val text = findViewById<SimpleMarqueeView>(R.id.text)
+        val text1 = findViewById<SimpleMarqueeView>(R.id.text1)
+        val text2 = findViewById<TextView>(R.id.text2)
+
+        val btn1 = findViewById<Button>(R.id.btn1)
+        val btn2 = findViewById<Button>(R.id.btn2)
+        val btn3 = findViewById<Button>(R.id.btn3)
+        val btn4 = findViewById<Button>(R.id.btn4)
         text.setText("1998")
         text.visibility = View.VISIBLE
-        text2.text = "Hello World! This is textview marquee.  You can use SimpleMarqueeView instead of this"
+        text2.text =
+            "Hello World! This is textview marquee.  You can use SimpleMarqueeView instead of this"
         text2.isSelected = true
         Log.v("text1", "1 ")
 
@@ -44,10 +53,10 @@ class MainAct : AppCompatActivity() {
             text1.setText("129")
         }
         btn3.setOnClickListener {
-            text1.visibility=View.VISIBLE
+            text1.visibility = View.VISIBLE
         }
         btn4.setOnClickListener {
-            text1.visibility=View.GONE
+            text1.visibility = View.GONE
         }
     }
 

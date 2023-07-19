@@ -1,78 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <li.yz.simplemarqueeviewlib.SimpleMarqueeView
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text"
-            android:visibility="gone"
             android:layout_marginTop="30dp"
             android:background="@drawable/gradient_mine_frg_level_wx"
             android:paddingStart="30dp"
-            android:paddingEnd="20dp"
             android:paddingTop="3dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="3dp"
+            android:tag="text5"
+            android:visibility="gone"
             app:delay="1500"
             app:margin_txt="133dp"
-            app:textSize="12sp"
-            app:textColor="@color/colorPrimary"
             app:shadow_width="12dp"
             app:speed="12"
-            android:tag="text5"
-            app:textStyle="bold"
-    />
+            app:textColor="@color/colorPrimary"
+            app:textSize="12sp"
+            app:textStyle="bold" />
+
     <li.yz.simplemarqueeviewlib.SimpleMarqueeView
+            android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text1"
             android:layout_marginTop="30dp"
             android:background="#000000"
             android:tag="text1"
-            app:text="Hello World! "
             app:gravity="center_horizontal"
-            app:textColor="@color/colorPrimary"
-    />
+            app:text="Hello World! "
+            app:textColor="@color/colorPrimary" />
+
     <TextView
+            android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text2"
-            android:textColor="@color/colorPrimary"
             android:layout_marginTop="30dp"
             android:background="#000000"
-            android:paddingStart="30dp"
-            android:paddingEnd="20dp"
-            android:textSize="12sp"
-            android:singleLine="true"
             android:ellipsize="marquee"
-            android:textStyle="bold"
-            android:marqueeRepeatLimit="marquee_forever"
             android:gravity="center_horizontal"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingStart="30dp"
             android:paddingTop="3dp"
-            android:paddingBottom="3dp"/>
+            android:paddingEnd="20dp"
+            android:paddingBottom="3dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
     <li.yz.simplemarqueeviewlib.SimpleMarqueeView
+            android:id="@+id/text3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text3"
-            app:text="Hello World"
             android:layout_marginTop="30dp"
             android:background="@color/colorAccent"
+            app:text="Hello World" />
 
-    />
-    <Button android:layout_width="100dp" android:layout_height="20dp"
-            android:text="btn1"
-    android:id="@+id/btn1"/>
-    <Button android:layout_width="100dp" android:layout_height="20dp"
-            android:text="btn2"
-            android:id="@+id/btn2"/>
-    <Button android:layout_width="100dp" android:layout_height="20dp"
-            android:text="btn3"
-            android:id="@+id/btn3"/>
-    <Button android:layout_width="100dp" android:layout_height="20dp"
-            android:text="btn4"
-            android:id="@+id/btn4"/>
+    <Button
+            android:id="@+id/btn1"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="btn1" />
+
+    <Button
+            android:id="@+id/btn2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="btn2" />
+
+    <Button
+            android:id="@+id/btn3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="btn3" />
+
+    <Button
+            android:id="@+id/btn4"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="btn4" />
 </LinearLayout>
