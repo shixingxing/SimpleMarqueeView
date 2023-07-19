@@ -10,7 +10,7 @@
 <img src="/resources/simple.gif" style="width: 30%;">
 
 #### Gradle:
-
+    implementation 'com.github.shixingxing:SimpleMarqueeView:2.0'
     implementation 'li.y.z:simplemarqueeviewlib:1.1.2'
 
 #### 属性
